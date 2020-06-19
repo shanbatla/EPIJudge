@@ -8,7 +8,26 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def even_odd(A: List[int]) -> None:
-    # TODO - you fill in here.
+    arr = A
+    start_idx = 0
+    end_idx = len(arr) - 1
+
+    def is_even(num):
+        return num % 2 == 0
+
+    def is_odd(num):
+        return num % 2 != 0
+
+    while start_idx < end_idx:
+        if is_odd(arr[start_idx]) and is_even(arr[end_idx]):
+            arr[start_idx], arr[end_idx] = arr[end_idx], arr[start_idx]
+            start_idx += 1
+            end_idx -= 1
+        else:
+            if is_even(arr[start_idx]):
+                start_idx += 1
+            if is_odd(arr[end_idx]):
+                end_idx -= 1
     return
 
 
