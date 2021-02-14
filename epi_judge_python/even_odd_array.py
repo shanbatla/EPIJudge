@@ -28,7 +28,6 @@ def even_odd(A: List[int]) -> None:
                 start_idx += 1
             if is_odd(arr[end_idx]):
                 end_idx -= 1
-    return
 
 
 @enable_executor_hook
