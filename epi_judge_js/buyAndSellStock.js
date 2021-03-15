@@ -17,16 +17,15 @@ function buyAndSellStockv2(prices) {
     let minPriceSoFar;
     let maxProfit = 0;
 
-    for (let idx = 0; idx < prices.length; idx++) {
+    prices.forEach((price, idx) => {
         if (idx === 0) {
-            minPriceSoFar = prices[idx];
-            continue;
+            minPriceSoFar = price;
         } else {
-            minPriceSoFar = Math.min(minPriceSoFar, prices[idx]);
-            let profitToday = prices[idx] - minPriceSoFar;
+            minPriceSoFar = Math.min(minPriceSoFar, price);
+            let profitToday = price - minPriceSoFar;
             maxProfit = Math.max(maxProfit, profitToday); 
         }
-    }
+    })
 
     return maxProfit;
 }
